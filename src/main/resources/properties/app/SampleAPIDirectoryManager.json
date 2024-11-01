@@ -1,0 +1,67 @@
+[
+    {
+        "title": "@@org.joget.plugin.marketplace.SampleAPIDirectoryManager.name@@",
+        "properties": [
+            {
+                "name": "userProvisioning",
+                "label": "@@org.joget.plugin.marketplace.SampleAPIDirectoryManager.userProvision@@",
+                "type": "checkbox",
+                "value": "true",
+                "options": [
+                    {
+                        "value": "true",
+                        "label": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "@@org.joget.plugin.marketplace.SampleAPIDirectoryManager.button@@",
+        "properties": [
+            {
+                "name": "buttonText",
+                "label": "@@org.joget.plugin.marketplace.SampleAPIDirectoryManager.button.label.text@@",
+                "type": "textfield",
+                "required": "true",
+                "value": "Login"
+            },
+            {
+                "name": "buttonIcon",
+                "label": "@@org.joget.plugin.marketplace.SampleAPIDirectoryManager.button.icon@@",
+                "type": "textfield",
+                "description": "Sample: fas fa-arrow-right",
+                "required": "true",
+                "value": "fas fa-arrow-right"
+            },
+            {
+                "name": "buttonTextColor",
+                "label": "@@org.joget.plugin.marketplace.SampleAPIDirectoryManager.button.textcolor@@",
+                "type" : "color",
+                "required": "true",
+                "value": "white"
+            },
+            {
+                "name": "buttonBackgroundColor",
+                "label": "@@org.joget.plugin.marketplace.SampleAPIDirectoryManager.button.background@@",
+                "type" : "color",
+                "required": "true",
+                "value": "blue"
+            }
+        ]
+    },
+    %s,
+            {
+                "title": "@@app.edm.label.addonDirectorManager@@",
+                "properties": [
+                    {
+                        "name": "dm1",
+                        "label": "@@app.edm.label.addon@@",
+                        "type": "elementselect",
+                        "options_ajax": "[CONTEXT_PATH]/web/json/plugin/org.joget.plugin.directory.SecureDirectoryManager/service",
+                        "url": "[CONTEXT_PATH]/web/property/json/getPropertyOptions"
+                    }
+                    %s
+                ]
+            }
+]
