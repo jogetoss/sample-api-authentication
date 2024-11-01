@@ -1,6 +1,20 @@
 # Description
 
-This repository is meant to serve as a general template for how to set up new repositories in the JogetOSS organization. 
+This is a proof-of-concept sample directory manager plugin to showcase login flow by calling an external API with the following flow.
+
+1. The plugin would add an additional login button to the login page in Joget.
+2. Clicking on the button would retrieve the username and password of the login form and calls the [webservice](https://github.com/jogetoss/sample-api-authentication/blob/main/src/main/java/org/joget/plugin/marketplace/SampleAPIDirectoryManager.java#L105) method.
+3. A API call to external server will be made by calling the [authenticateExternal](https://github.com/jogetoss/sample-api-authentication/blob/main/src/main/java/org/joget/plugin/marketplace/SampleAPIDirectoryManager.java#L105) method.
+4. The payload of the external API is read and used to determine if user is authorized or not. Please see https://github.com/jogetoss/sample-api-authentication/blob/main/src/main/java/org/joget/plugin/marketplace/SampleAPIDirectoryManager.java#L171.
+5. If the user is **authenticated**, and the user exists in Joget, then the user is logged in.
+6. If the user is **authenticated**, but the user does **not** exists in Joget, and the user provisioning feature is **enabled** in the plugin, then a new Joget user will be created and the user is logged in. Please see https://github.com/jogetoss/sample-api-authentication/blob/main/src/main/java/org/joget/plugin/marketplace/SampleAPIDirectoryManager.java#L200.
+7. If the user is **authenticated**, but the user does **not** exists in Joget, and the user provisioning feature is **disabled** in the plugin, then login fails. Please see https://github.com/jogetoss/sample-api-authentication/blob/main/src/main/java/org/joget/plugin/marketplace/SampleAPIDirectoryManager.java#L236.
+
+Get Started
+
+1. Clone this repository and modify the plugin accordingly.
+2. The external API URL is configured at https://github.com/jogetoss/sample-api-authentication/blob/main/src/main/java/org/joget/plugin/marketplace/SampleAPIDirectoryManager.java#L138.
+3. Build the plugin and test.
 
 # Getting Help
 
